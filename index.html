@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="registrationForm" class="form">
+            <h2 class="title">Registro de Usuario</h2>
+            <label for="username">Nombre de Usuario:</label>
+            <input placeholder="5-15 caracteres alfanuméricos" type="text" id="username" name="username" pattern="^[a-zA-Z0-9]{5,15}$" title="Debe tener entre 5 y 15 caracteres alfanuméricos" required>
+            <br>
+
+            <label for="dob">Fecha de Nacimiento:</label>
+            <input  type="date" id="dob" name="dob" pattern="^\d{4}-\d{2}-\d{2}$" title="Debe estar en el formato DD-MM-YYYY" required>
+            <br>
+
+            <label for="password">Contraseña (incluyendo al menos una letra mayúscula, una minúscula, un número y un carácter especial):</label>
+            <div class="password-input-container">
+                <input  placeholder="mínimo 8 caracteres" type="password" id="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$" title="Debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una minúscula, un número y un carácter especial" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()">
+                    <i class="far fa-eye" id="toggleIcon"></i>
+                </span>
+            </div>
+            <br>
+
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input placeholder="vuelva a ingresar la contraseña" type="password" id="confirmPassword" name="confirmPassword" title="Por favor, vuelva a ingresar la contraseña" required>
+            <br>
+            
+
+            <label for="postal">Código Postal:</label>
+            <input placeholder="exactamente 5 dígitos" type="text" id="postal" name="postal" pattern="^\d{5}$" title="Debe consistir en exactamente 5 dígitos" required>
+            <br>
+
+            <label for="email">Correo Electrónico:</label>
+            <input placeholder="Direccion valida" type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Debe ser una dirección de correo electrónico válida" required>
+            <br>
+
+            <label for="phone">Número de Teléfono:</label>
+            <input placeholder="formato internacional(signo + y hasta 15 dígitos)" type="tel" id="phone" name="phone" pattern="^\+\d{1,15}$" title="Debe seguir el formato internacional, comenzando con el signo + y hasta 15 dígitos" required>
+            <br>
+
+            
+
+            <input type="submit" class="submit" value="Registrar">
+        </form>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
